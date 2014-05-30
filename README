@@ -1,0 +1,35 @@
+Usage Python script to use the RPi to capture LEED images on command      
+# The script interfaces with the RPi GPIO to provide
+# two push buttons for control
+# And two LED's for information on what is happeneing
+
+# The script will intially light the green LED for 2 second,
+# then the red LED for 2 secoonds
+# ANd the will switch back to the green LED if it is ready to capture images.
+
+# After a push button command to capture an image while
+# the RPi is saving the file the red LED
+# Will remain lit and it is ready to caputre again
+# when the green LED comes back on
+
+# The second button will immediately terminate the program
+
+# If the LEDs remain on after terminatation then
+# the script 'gclean.py' must be run
+# This executes the GPIO.cleanup() function to
+# free up valuable resources on the RPi
+
+# ******* Note - this script must be run with admin privleges!!!
+# If the script is run without admin privleges
+# the GPIO will not be accessible
+
+# To run cd to the directory of the script
+# and execute 'sudo python picamleed.py'
+
+# Maxwell Grady 2014
+
+This is a python script written to interface a Raspberry Pi and Pi Camera Board with an OMICRON SpectaLEED
+system in order to collect data for LEED-IV experiments
+
+This is a work in progress and can work independently of the IV analysis script pyLEED.py
+This module only provides funtionality for data collection and does not accomplish any analysis
